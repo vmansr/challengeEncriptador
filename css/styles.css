@@ -1,195 +1,158 @@
 body {
-	display: flex;
-	background-color: #bfc8e9;
-	justify-content: center;
-	font-family: Arial, sans-serif;
-	height: 100vh;
-	margin: 0;
-	padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #bfc8e9;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+	justify-content: flex-start;
 }
 
 .logo {
-	display: flex;
-	margin: 40px 0;
-	width: 40px;
-	height: 40px;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
 }
 
-.container {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: calc(100vh - 80px);
-	margin: 0 auto;
-	padding: 0 20px;
+h1 {
+    color: #0A3871;
+    margin: 0;
+	margin-left: 50px;
 }
 
-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 50%;
-	height: 575px;
-	padding: 20px;
-	background-color: #F3F5FC;
-	border-radius: 5px;
-	margin-top: 150px;
+main.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+#encriptForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color: #F3F5FC;
+    border-radius: 5px;
+    padding: 20px;
 }
 
 textarea {
-	margin: 20px 0;
-	width: 90%;
-	height: 600px;
-	border: none;
-	border-radius: 5px;
-	padding: 10px;
-	background-color: #F3F5FC;
-	color: #0A3871;
-	font-size: 32px;
-	resize: none;
+    width: 90%;
+    height: 400px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #F3F5FC;
+    color: #0A3871;
+    font-size: 32px;
+    resize: none;
 }
 
 textarea::placeholder {
-	color: #0A3971;
-	font-size: 32px;
-	font-family: Arial, sans-serif;
+    color: #0A3971;
 }
 
 textarea:focus {
-	outline: none;
+    outline: none;
+}
+
+.buttons-seccion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 button {
-	width: 200px;
-	margin: 10px;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .encriptar {
-	background-color: #0A3871;
-	color: white;
-	width: 328px;
-	height: 67px;
-	border-radius: 24px;
-	font-weight: bold;
+    background-color: #0A3871;
+    color: white;
 }
 
 .desencriptar {
-	background-color: #8390c0;
-	color: black;
-	width: 328px;
-	height: 67px;
-	border-radius: 24px;
-	color: #e7ebf0;
-	border: 1px solid #0A3871;
-	font-weight: bold;
+    background-color: #8390c0;
+    color: #e7ebf0;
+    border: 1px solid #0A3871;
 }
 
 .limpiar {
-	background-color: #F3F5FC;
-	color: black;
-	width: 328px;
-	height: 67px;
-	border-radius: 24px;
-	color: #180203;
-	border: 1px solid #1a0303;
-	font-weight: bold;
+    background-color: #F3F5FC;
+    color: #180203;
+    border: 1px solid #1a0303;
 }
 
 .mostrarHistorial {
-	background-color: #0f3f9e;
-	color: black;
-	width: 328px;
-	height: 67px;
-	border-radius: 24px;
-	color: #ebe0e0;
-	border: 1px solid #1a0303;
-	font-weight: bold;
+    background-color: #0f3f9e;
+    color: #ebe0e0;
+    border: 1px solid #1a0303;
 }
 
-.contenedor-inicial .apartado-inicial {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 350px;
-	height: 650px;
-	text-align: center;
-	padding: 20px;
-	background-color: #FFFFFF;
-	border-radius: 32px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	margin: 75px 50px 50px 0;
-	margin-bottom: 0;
+.contenedor-inicial {
+    width: 350px;
 }
 
-.contenedor-inicial .contenedor-resultado {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: space-between;
-	width: 350px;
-	height: 650px;
-	text-align: left;
-	padding: 20px;
-	background-color: #FFFFFF;
-	border-radius: 32px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	margin: 75px 50px 50px 0;
-	margin-bottom: 0;
-}
-
-.contenedor-inicial .contenedor-resultado .copiar {
-	background-color: #FFFFFF;
-	color: #0A3871;
-	border: 1px solid #0A3871;
-	width: 328px;
-	height: 67px;
-	border-radius: 24px;
-	cursor: pointer;
-}
-
-.contenedor-inicial .apartado-inicial .p-bold {
-	font-weight: bold;
-	font-size: 24px;
-	text-align: center;
-}
-
-.contenedor-inicial .apartado-inicial p {
-	font-size: 16px;
-	text-align: center;
-}
-
-.contenedor-inicial .contenedor-resultado .p-resultado {
-	font-size: 24px;
-	text-align: left;
-	color: #495057;
+.apartado-inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+    text-align: center;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 32px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .apartado-inicial img {
-	width: 100%;
-	margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-.historial-panel {
+.p-bold {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.historial-Panel {
     display: none;
     position: fixed;
     top: 50%;
-	left: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-	padding: 20px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     z-index: 1000;
-	max-width: 80%;
-	max-height: 80%;
-	overflow-y: auto;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
 }
 
 .historial-entry {
@@ -201,137 +164,50 @@ button {
     border-bottom: none;
 }
 
-
-
-/* Para tabletas */
-@media (max-width: 768px) {
-	.principal {
-		flex-direction: column;
-		align-items: center;
-		padding: 0 20px;
-	}
-
-	.contenedor-inicial .apartado-inicial,
-	.contenedor-inicial .contenedor-resultado {
-		width: 100%;
-		margin: 0;
-		margin-bottom: 50px;
-	}
-
-	.contenedor-inicial .apartado-inicial .p-bold {
-		font-size: 24px;
-	}
-
-	.contenedor-inicial .apartado-inicial p {
-		font-size: 16px;
-	}
-
-	.contenedor-inicial .contenedor-resultado .p-resultado {
-		font-size: 24px;
-	}
-
-    
-	textarea {
-		height: 450px;
-		font-size: 32px;
-	}
-
-	button {
-		width: 332px;
-		height: 67px;
-		font-size: 16px;
-	}
-
-	.buttons {
-		display: flex;
-		justify-content: space-around;
-		width: 100%;
-	}
-
-	.encriptar {
-		width: 332px;
-		height: 67px;
-	}
-
-	.desencriptar {
-		width: 332px;
-		height: 67px;
-	}
-
-	.contenedor-inicial .contenedor-resultado .copiar {
-		width: 624px;
-		height: 67px;
-	}
-
-	.contenedor-inicial .apartado-inical {
-		width: 688px;
-		height: 133px;
-	}
-
-	.contenedor-inicial .apartado-inical img {
-		display: none;
-	}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0A3871;
+    color: white;
 }
 
-/* Para móviles */
+/* Media queries */
+@media (max-width: 768px) {
+    main.container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #encriptForm, .contenedor-inicial {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        height: 300px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
 @media (max-width: 425px) {
-	.principal {
-		flex-direction: column;
-		align-items: center;
-		padding: 0 15px;
-	}
+    textarea {
+        height: 200px;
+        font-size: 24px;
+    }
 
-	textarea {
-		height: 300px;
-		font-size: 32px;
-	}
+    .apartado-inicial {
+        height: auto;
+    }
 
-	.contenedor-inicial .apartado-inical .p-bold {
-		font-size: 24px;
-	}
-
-	.contenedor-inicial .apartado-inical p {
-		font-size: 16px;
-	}
-
-	.contenedor-inicial .contenedor-resultado .p-resultado {
-		font-size: 24px;
-	}
-
-	button {
-		width: 332px;
-		height: 67px;
-		font-size: 16px;
-	}
-
-	.buttons {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		width: 100%;
-	}
-
-	.encriptar {
-		width: 343px;
-		height: 67px;
-	}
-
-	.desencriptar {
-		width: 343px;
-		height: 67px;
-	}
-
-	.contenedor-inicial .contenedor-resultado .copiar {
-		width: 279px;
-		height: 67px;
-	}
-
-	.contenedor-inicial .apartado-inical {
-		width: 327px;
-		height: 166px;
-	}
-
-	.contenedor-inicial .apartado-inical img {
-		display: none;
-	}
+    .apartado-inicial img {
+        display: none;
+    }
 }

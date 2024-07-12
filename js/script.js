@@ -33,23 +33,25 @@ function clickCopiarTexto() {
             navigator.clipboard.writeText(texto).then(() => {
                 const mensajeConfirmacion = document.createElement("div");
                 mensajeConfirmacion.textContent = "Texto copiado correctamente!";
-                mensajeConfirmacion.style.color = "green";
-                mensajeConfirmacion.style.position = "absolute";
-                mensajeConfirmacion.style.bottom = "-1px";
-                mensajeConfirmacion.style.left = "0";
-                mensajeConfirmacion.style.right = "0";
-                mensajeConfirmacion.style.textAlign = "center";
-                document.querySelector(".contenedor-resultado").appendChild(mensajeConfirmacion);
+                mensajeConfirmacion.style.cssText = `
+                    color: green;
+                    position: absolute;
+                    bottom: -30px;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                `;
+                document.querySelector(".contenedor-inicial").appendChild(mensajeConfirmacion);
                 setTimeout(() => {
                     mensajeConfirmacion.remove();
                 }, 2000);
             });
         };
-        document.querySelector(".contenedor-resultado").appendChild(botonCopiar);
+        document.querySelector(".contenedor-inicial").appendChild(botonCopiar);
     }
 }
 
-function clickEncriptar() {
+function clickEncriptar(event) {
     event.preventDefault();
     let texto = document.getElementById("texto").value;
     try {
@@ -62,7 +64,7 @@ function clickEncriptar() {
     }
 }
 
-function clickDesencriptar() {
+function clickDesencriptar(event) {
     event.preventDefault();
     let texto = document.getElementById("texto").value;
     let textoDesencriptado = desencriptar(texto);
@@ -84,9 +86,7 @@ function mostrarResultado(texto) {
 }
 
 function limpiarTextoEntrada() {
-    // Limpiamos solo el área de ingreso de texto
     document.getElementById("texto").value = '';
-        
 }
 
 function agregarAlHistorial(textoOriginal, textoResultado, tipo) {
@@ -96,15 +96,13 @@ function agregarAlHistorial(textoOriginal, textoResultado, tipo) {
         tipo: tipo,
         fecha: new Date()
     });
-    // Limitamos el historial a las últimas 5 entradas
     if (historial.length > 5) {
         historial.pop();
     }
-        
 }
 
 function mostrarHistorial() {
-    let modal = document.getElementById('historialModal');
+    let historialPanel = document.getElementById('historialPanel');
     let historialContainer = document.getElementById('historial-container');
     
     historialContainer.innerHTML = '';
@@ -125,13 +123,15 @@ function mostrarHistorial() {
         });
     }
     
-    modal.style.display = "block";
+    historialPanel.style.display = "block";
 }
 
-document.getElementById("encriptar").addEventListener("click", clickEncriptar);
-document.getElementById("desencriptar").addEventListener("click", clickDesencriptar);
-document.getElementById("limpiar").addEventListener("click", limpiarTextoEntrada);
-document.getElementById("mostrarHistorial").addEventListener("click", mostrarHistorial);
-document.getElementById("cerrarHistorial").addEventListener("click", function() {
-    document.getElementById('historialPanel').style.display = 'none';
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("encriptar").addEventListener("click", clickEncriptar);
+    document.getElementById("desencriptar").addEventListener("click", clickDesencriptar);
+    document.getElementById("limpiar").addEventListener("click", limpiarTextoEntrada);
+    document.getElementById("mostrarHistorial").addEventListener("click", mostrarHistorial);
+    document.getElementById("cerrarHistorial").addEventListener("click", function() {
+        document.getElementById('historialPanel').style.display = 'none';
+    });
 });
