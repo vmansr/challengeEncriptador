@@ -1,0 +1,49 @@
+# Actualizaciones del Encriptador/Desencriptador
+
+## Resumen de Cambios
+
+Hem realizado varias mejoras en mi proyecto de Encriptador/Desencriptador para optimizar su estructura, diseño y funcionalidad.
+
+### Cambios en HTML
+
+1. Añadido un `<header>` con logo y título principal (`<h1>`).
+2. Restructurado el contenido principal dentro de una etiqueta `<main>`.
+3. Mejorado la semántica general del documento.
+4. Añadido un `<footer>` para información adicional.
+5. Implementado un panel de historial.
+
+### Actualizaciones en CSS
+
+1. Ajustado el diseño para ser más responsivo.
+2. Mejorado el estilo del header, incluyendo la posición del título.
+3. Optimizado el diseño para tablets y dispositivos móviles.
+4. Añadido estilos para el nuevo panel de historial.
+5. Mejorado la consistencia visual en diferentes tamaños de pantalla.
+
+### Mejoras en JavaScript
+
+1. Actualizado las funciones para trabajar con la nueva estructura HTML.
+2. Implementado la funcionalidad del panel de historial.
+3. Mejorado el manejo de errores y la retroalimentación al usuario.
+4. Optimizado la función de copiar texto.
+5. Añadido event listeners para asegurar la carga completa del DOM.
+
+## Cómo usar
+
+1. Ingrese el texto en el área designada.
+2. Elija entre encriptar o desencriptar el texto.
+3. El resultado se mostrará en el panel derecho.
+4. Use el botón "Copiar" para copiar el resultado al portapapeles.
+5. Acceda al historial de operaciones mediante el botón "Mostrar Historial".
+
+## Notas adicionales
+
+- El encriptador ahora maneja mejor los errores, como el uso de mayúsculas o acentos.
+- El historial guarda las últimas 5 operaciones realizadas.
+- El diseño es ahora más adaptable a diferentes dispositivos.
+
+## Próximos pasos
+
+- Implementar almacenamiento local para mantener el historial entre sesiones.
+- Añadir opciones de personalización de la encriptación.
+- Mejorar la accesibilidad general de la aplicación.
