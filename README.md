@@ -1,14 +1,15 @@
 # Encriptador y Desencriptador de Texto
 
-Este proyecto es una aplicación web que permite encriptar y desencriptar texto utilizando un algoritmo de sustitución simple. Es ideal para enviar mensajes secretos de manera divertida y segura.
+Este proyecto es una aplicación web interactiva que permite a los usuarios encriptar y desencriptar texto utilizando un algoritmo de sustitución personalizado. Diseñada con una interfaz intuitiva, la aplicación ofrece funcionalidades adicionales como copiar resultados, limpiar entradas y mantener un historial de operaciones recientes.
 
 ## Características
 
-- Encriptación de texto
-- Desencriptación de texto
-- Copiar texto resultante al portapapeles
-- Historial de las últimas 5 operaciones realizadas
-- Interfaz de usuario intuitiva y responsive
+- Encriptación de texto: Transforma el texto ingresado según reglas predefinidas.
+- Desencriptación de texto: Revierte el proceso de encriptación.
+- Copiado rápido: Permite copiar el resultado al portapapeles con un clic.
+- Limpieza de entrada: Facilita borrar el texto de entrada rápidamente.
+- Historial de operaciones: Guarda las últimas 5 operaciones realizadas.
+- Interfaz responsiva: Diseñada para funcionar en diversos dispositivos y tamaños de pantalla.
 
 ## Cómo funciona
 
@@ -27,6 +28,14 @@ La desencriptación realiza el proceso inverso.
 - HTML5
 - CSS3
 - JavaScript
+
+## Estructura del Proyecto
+encriptador-desencriptador/
+│
+├── index.html
+├── styles.css
+├── script.js
+└── README.md
 
 ## Funciones principales:
 - `encriptar(texto)`: Reemplaza ciertas letras con palabras específicas.
