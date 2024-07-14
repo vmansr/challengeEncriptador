@@ -27,6 +27,7 @@
                     <button type="button" id="desencriptar" class="desencriptar">Desencriptar</button>
                     <button type="button" id="limpiar" class="limpiar">Limpiar</button>
                     <button type="button" id="mostrarHistorial" class="mostrarHistorial">Mostrar Historial</button>
+                    <button type="button" id="actualizar" class="actualizar">Actualizar</button>
                 </div>
             </div>
         </form>
@@ -37,6 +38,10 @@
                 <p class="p-bold">Ningún mensaje fue encontrado</p>
                 <p>Ingresa el texto que desees encriptar o desencriptar</p>
             </div>
+            <div class="contenedor-resultado" style="display: none;">
+                <p class="p-resultado"></p>
+                <button id="copiar" class="copiar">Copiar</button>
+            </div>
         </div>
         
         <div id="historialPanel" class="historial-Panel">
@@ -45,7 +50,6 @@
                 <!-- Aquí se insertarán las entradas del historial dinámicamente -->
             </div>
             <div class="historial-entry">
-                <p>No hay entradas en el historial</p>
                 <button type="button" id="cerrarHistorial">Cerrar Historial</button>
             </div>
         </div>

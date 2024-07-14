@@ -23,32 +23,22 @@ function desencriptar(texto) {
 
 function clickCopiarTexto() {
     let botonCopiar = document.getElementById("copiar");
-    if (!botonCopiar) {
-        botonCopiar = document.createElement("button");
-        botonCopiar.id = "copiar";
-        botonCopiar.classList.add("copiar");
-        botonCopiar.textContent = "Copiar";
-        botonCopiar.onclick = function () {
-            let texto = document.querySelector(".p-resultado").textContent;
-            navigator.clipboard.writeText(texto).then(() => {
-                const mensajeConfirmacion = document.createElement("div");
-                mensajeConfirmacion.textContent = "Texto copiado correctamente!";
-                mensajeConfirmacion.style.cssText = `
-                    color: green;
-                    position: absolute;
-                    bottom: -30px;
-                    left: 0;
-                    right: 0;
-                    text-align: center;
-                `;
-                document.querySelector(".contenedor-inicial").appendChild(mensajeConfirmacion);
-                setTimeout(() => {
-                    mensajeConfirmacion.remove();
-                }, 2000);
-            });
-        };
-        document.querySelector(".contenedor-inicial").appendChild(botonCopiar);
-    }
+    botonCopiar.onclick = function () {
+        let texto = document.querySelector(".p-resultado").textContent;
+        navigator.clipboard.writeText(texto).then(() => {
+            const mensajeConfirmacion = document.createElement("div");
+            mensajeConfirmacion.textContent = "Texto copiado correctamente!";
+            mensajeConfirmacion.style.cssText = `
+                color: green;
+                margin-top: 10px;
+                text-align: center;
+            `;
+            document.querySelector(".contenedor-resultado").appendChild(mensajeConfirmacion);
+            setTimeout(() => {
+                mensajeConfirmacion.remove();
+            }, 2000);
+        });
+    };
 }
 
 function clickEncriptar(event) {
@@ -74,15 +64,14 @@ function clickDesencriptar(event) {
 }
 
 function mostrarResultado(texto) {
-    let resultado = document.querySelector('.contenedor-inicial');
-    resultado.innerHTML = '';
-    let contenedor = document.createElement('div');
-    contenedor.classList.add('contenedor-resultado');
-    let parrafo = document.createElement('p');
-    parrafo.textContent = texto;
-    parrafo.classList.add('p-resultado');
-    contenedor.appendChild(parrafo);
-    resultado.appendChild(contenedor);
+    let contenedorInicial = document.querySelector('.contenedor-inicial');
+    let apartadoInicial = contenedorInicial.querySelector('.apartado-inicial');
+    let contenedorResultado = contenedorInicial.querySelector('.contenedor-resultado');
+    let pResultado = contenedorResultado.querySelector('.p-resultado');
+
+    apartadoInicial.style.display = 'none';
+    contenedorResultado.style.display = 'block';
+    pResultado.textContent = texto;
 }
 
 function limpiarTextoEntrada() {
@@ -126,6 +115,66 @@ function mostrarHistorial() {
     historialPanel.style.display = "block";
 }
 
+function addClickEffect(buttonId) {
+    const button = document.getElementById(buttonId);
+    button.addEventListener('mousedown', function() {
+        this.classList.add('button-click');
+    });
+    button.addEventListener('mouseup', function() {
+        this.classList.remove('button-click');
+    });
+    button.addEventListener('mouseleave', function() {
+        this.classList.remove('button-click');
+    });
+}
+
+function actualizarAplicacion() {
+    // Limpiar el área de texto
+    document.getElementById("texto").value = '';
+    
+    // Restaurar el estado inicial del contenedor
+    let contenedorInicial = document.querySelector('.contenedor-inicial');
+    contenedorInicial.innerHTML = `
+        <div class="apartado-inicial">
+            <img class="imagen_muneco" src="images/Muñeco.png" alt="Muñeco Alura">
+            <p class="p-bold">Ningún mensaje fue encontrado</p>
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        </div>
+        <div class="contenedor-resultado" style="display: none;">
+            <p class="p-resultado"></p>
+            <button id="copiar" class="copiar">Copiar</button>
+        </div>
+    `;
+    
+    // Limpiar el historial
+    historial = [];
+    
+    // Ocultar el panel de historial si está visible
+    document.getElementById('historialPanel').style.display = 'none';
+    
+    // Mostrar el mensaje de actualización
+    mostrarMensajeActualizacion();
+}
+
+function mostrarMensajeActualizacion() {
+    let mensaje = document.createElement('div');
+    mensaje.className = 'mensaje-actualizacion';
+    mensaje.textContent = 'La aplicación ha sido actualizada exitosamente.';
+
+    
+   // Obtener el contenedor principal que contiene todos los elementos
+   let contenedorPrincipal = document.querySelector('.contenedor-inicial');
+    
+   // Insertar el mensaje al final del contenedor principal
+   contenedorPrincipal.appendChild(mensaje);
+    
+    // Remover el mensaje después de 3 segundos
+    setTimeout(() => {
+        mensaje.remove();
+    }, 3000);
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("encriptar").addEventListener("click", clickEncriptar);
     document.getElementById("desencriptar").addEventListener("click", clickDesencriptar);
@@ -134,4 +183,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("cerrarHistorial").addEventListener("click", function() {
         document.getElementById('historialPanel').style.display = 'none';
     });
+
+    addClickEffect('encriptar');
+    addClickEffect('desencriptar');
+    addClickEffect('limpiar');
+    addClickEffect('mostrarHistorial');
+    addClickEffect('actualizar');
+
+    document.getElementById("actualizar").addEventListener("click", actualizarAplicacion);
+    
+    // Añadir el efecto de clic al nuevo botón
+    addClickEffect('actualizar');
+
+
+
+
 });
