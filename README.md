@@ -144,6 +144,57 @@ Hem realizado varias mejoras en mi proyecto de Encriptador/Desencriptador para o
 - Mejorar la accesibilidad general de la aplicación.
 
 
+## Modificaciones agregadas
+
+- Historial de operaciones recientes
+- Botón de actualización para reiniciar la aplicación
+- Efectos visuales en botones
+- Mensajes de confirmación para acciones importantes
+
+## Funcionalidades detalladas
+
+- Efecto de clic en botones
+- La animación CSS buttonClick mueve el botón 2 píxeles hacia abajo y a la derecha en el 50% de la animación, y luego lo devuelve a su posición original.
+- La clase button-click aplica esta animación.
+- La función addClickEffect añade event listeners a un botón para:
+- Añadir la clase button-click cuando se presiona el botón.
+- Remover la clase cuando se suelta el botón o el cursor sale del botón.
+
+Este efecto se aplica a todos los botones al cargar el DOM.
+
+## Implementación de Botón de actualización
+
+- Se ha añadido un nuevo botón "Actualizar" en la interfaz.
+- El botón está estilizado para coincidir con el diseño existente.
+- La función actualizarAplicacion() se ejecuta al hacer clic en este botón y realiza las siguientes acciones:
+- Limpia el área de texto.
+- Restaura el contenedor de resultado a su estado inicial.
+- Limpia el historial.
+- Oculta el panel de historial si está visible.
+- Muestra un mensaje de confirmación.
+
+## Modficación de Mensaje de actualización
+
+- La función mostrarMensajeActualizacion():
+- Crea un nuevo elemento div con el mensaje de actualización.
+- Añade este elemento al contenedor principal.
+- Configura un temporizador para remover el mensaje después de 3 segundos.
+- El CSS añadido estiliza el mensaje de actualización para que sea verde y tenga bordes redondeados, con una animación de fundido para que aparezca y desaparezca suavemente.
+
+## Implementación de la Estructura de la interfaz
+
+- El resultado y el botón de copiar están dentro del mismo contenedor que el mensaje inicial.
+- La función mostrarResultado() oculta el mensaje inicial y muestra el resultado con el botón de copiar.
+- La función clickCopiarTexto() muestra el mensaje de confirmación dentro del contenedor de resultado.
+- La función actualizarAplicacion() restaura completamente el estado inicial del contenedor.
+
+## Experiencia de usuario
+
+- Cuando el usuario hace clic en "Actualizar", la aplicación se reinicia a su estado inicial.
+- Se muestra un mensaje en el panel principal indicando que la aplicación ha sido actualizada.
+- Un mensaje adicional aparece brevemente debajo del panel principal, confirmando la actualización exitosa.
+- Toda la funcionalidad se mantiene dentro del panel principal, proporcionando una experiencia de usuario cohesiva y contenida.
+
 ---
 
 Desarrollado con ❤️ por [Victor M]
