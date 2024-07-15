@@ -97,7 +97,7 @@ Las contribuciones son bienvenidas. Por favor, abre un issue para discutir los c
 
 ## Resumen de Cambios
 
-Hem realizado varias mejoras en mi proyecto de Encriptador/Desencriptador para optimizar su estructura, diseño y funcionalidad.
+He realizado varias mejoras en mi proyecto de Encriptador/Desencriptador para optimizar su estructura, diseño y funcionalidad.
 
 ### Cambios en HTML
 
